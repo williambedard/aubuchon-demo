@@ -1,0 +1,264 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product--default",
+      "blocks": {
+        "product_header": {
+          "type": "product_header",
+          "settings": {
+            "show_divider": true,
+            "show_vendor": true,
+            "show_sku": true,
+            "show_price": true,
+            "show_discount": true,
+            "discount_format": "percent_off",
+            "show_shop_pay": false,
+            "show_product_rating": false,
+            "show_rating_count": false,
+            "rating_style": "regular",
+            "show_sale_badge": true,
+            "show_new_badge": true,
+            "show_custom_badges": true,
+            "product_header_always_top_mobile": "above"
+          }
+        },
+        "product_labels": {
+          "type": "product_labels",
+          "settings": {
+            "heading": "",
+            "icon_size": 24,
+            "label_style": "block_heading",
+            "outline": true,
+            "icon_1": "delivery-truck-left",
+            "text_1": "Product label",
+            "icon_2": "shield-lock",
+            "text_2": "Product label",
+            "icon_3": "chat",
+            "text_3": "",
+            "icon_4": "none",
+            "text_4": "",
+            "icon_5": "none",
+            "text_5": "",
+            "icon_6": "none",
+            "text_6": ""
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_popup_option": "Size",
+            "variant_popup_icon": "measuring-tape",
+            "variant_popup_text": "Size guide",
+            "variant_popup_page": "",
+            "swatch_size": "medium",
+            "siblings_show_product_image": true,
+            "siblings_option_name": "Color",
+            "chip_layout": "natural"
+          }
+        },
+        "inventory_counter": {
+          "type": "inventory-counter",
+          "settings": {
+            "label": "Availability:",
+            "inventory_max": "400",
+            "low_inventory_threshold": "20",
+            "indicator_style": "icon_with_text",
+            "show_status_bar": true,
+            "show_inventory_transfer": true,
+            "show_untracked_quantity": false
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "enable_sticky_atc_bar_desktop": true,
+            "enable_sticky_atc_bar_mobile": true,
+            "drop_shadow": "line",
+            "show_quantity_selector": true,
+            "show_quantity_in_cart": true,
+            "show_pickup_availability": true
+          }
+        },
+        "a07bf652-f2c2-4f02-a6b0-a12738007a50": {
+          "type": "payments_and_trust",
+          "settings": {
+            "column_placement": "right",
+            "add_box": false,
+            "content_alignment": "left",
+            "show_payment_icons": true,
+            "payment_heading": "",
+            "payment_heading_icon": "none",
+            "payment_text": "<p>Accepted payments:</p>",
+            "payment_text_position": "above",
+            "trust_heading": "",
+            "trust_heading_icon": "none",
+            "trust_text": "",
+            "trust_text_position": "above",
+            "image_size": 100,
+            "display_as_collapsible_row": false,
+            "expand_by_default": false,
+            "collapsible_row_title": "Payments & Trust"
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "enable_os_share": true
+          }
+        },
+        "94641e49-f76f-4dd7-aa94-b9f6413e12cd": {
+          "type": "spacer",
+          "settings": {
+            "column_placement": "right",
+            "space": 4
+          }
+        },
+        "3fa52a1f-6405-4671-ba9f-a320879eb5dd": {
+          "type": "product_text_columns",
+          "settings": {
+            "column_placement": "left",
+            "add_box": false,
+            "add_dividers": true,
+            "icon_border": "circle",
+            "icon_border_style": "outlined",
+            "icon_border_color": "accent",
+            "icon_size": 24,
+            "icon_size_mobile": 20,
+            "icon_1": "delivery-truck-left",
+            "heading_1": "Text column",
+            "text_1": "<p>Add a line of text</p>",
+            "icon_2": "paper-airplane",
+            "heading_2": "Text column",
+            "text_2": "<p>Add a line of text</p>",
+            "icon_3": "headphones-with-mic",
+            "heading_3": "Text column",
+            "text_3": "<p>Add a line of text</p>"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "column_placement": "right",
+            "title": "Description",
+            "text_font_class": "fs-body-100",
+            "truncate_num_lines": "5",
+            "display_as_collapsible_row": true,
+            "expand_by_default": true
+          }
+        },
+        "accordion_hxDxni": {
+          "type": "accordion",
+          "settings": {
+            "column_placement": "right",
+            "expand_by_default": false,
+            "heading": "Collapsible row",
+            "content": "<p>Add your collapsible row content here.</p>",
+            "page_for_content": "",
+            "custom_liquid": ""
+          }
+        },
+        "accordion_rW3wxc": {
+          "type": "accordion",
+          "settings": {
+            "column_placement": "right",
+            "expand_by_default": false,
+            "heading": "Collapsible row",
+            "content": "<p>Add your collapsible row content here.</p>",
+            "page_for_content": "",
+            "custom_liquid": ""
+          }
+        },
+        "accordion_RB9kP9": {
+          "type": "accordion",
+          "settings": {
+            "column_placement": "right",
+            "expand_by_default": false,
+            "heading": "Collapsible row",
+            "content": "<p>Add your collapsible row content here.</p>",
+            "page_for_content": "",
+            "custom_liquid": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_header",
+        "product_labels",
+        "variant_picker",
+        "inventory_counter",
+        "buy_buttons",
+        "a07bf652-f2c2-4f02-a6b0-a12738007a50",
+        "share",
+        "94641e49-f76f-4dd7-aa94-b9f6413e12cd",
+        "3fa52a1f-6405-4671-ba9f-a320879eb5dd",
+        "description",
+        "accordion_hxDxni",
+        "accordion_rW3wxc",
+        "accordion_RB9kP9"
+      ],
+      "settings": {
+        "enable_sticky_product_details": true,
+        "show_breadcrumbs": true,
+        "show_navigation_buttons": true,
+        "gallery_size": "medium",
+        "thumbnail_position": "left",
+        "thumbnail_size": "small",
+        "enable_video_looping": true,
+        "enable_product_lightbox": true,
+        "show_thumbs_in_product_lightbox": true,
+        "image_aspect_ratio": "natural",
+        "enable_gift_card_recipient": true,
+        "show_recommended_products_on_desktop": true,
+        "show_recommended_products_on_mobile": true,
+        "max_recommended_products": 3,
+        "enable_quick_view_recommended_products": true,
+        "recommended_products_heading": "You may also like",
+        "section_style_enable_animation": true
+      }
+    },
+    "b5845d98-3a17-46b6-90ff-f79251658492": {
+      "type": "featured-collection",
+      "settings": {
+        "center_content": false,
+        "preheading": "",
+        "heading": "Featured Collection",
+        "subheading": "",
+        "maximum_content_width": 650,
+        "button_1_button_link": "",
+        "button_1_button_label": "",
+        "button_1_button_style": "primary",
+        "button_2_button_link": "",
+        "button_2_button_label": "",
+        "button_2_button_style": "tertiary",
+        "button_position": "header",
+        "collection": "coffee-kits",
+        "maximum_products": 10,
+        "num_columns": "5",
+        "num_columns_mobile": "2",
+        "enable_slider_desktop": true,
+        "enable_slider_mobile": true,
+        "show_view_all_tile": true,
+        "tile_location": "end",
+        "accent": "",
+        "title": "{{ section.settings.collection.title }}",
+        "text": "View all",
+        "text_position": "flex-start_flex-start",
+        "color_scheme": "color_scheme_2",
+        "override_with_custom_colors": false,
+        "override_color_text": "#393939",
+        "override_color_background": "#ffffff",
+        "background_image": "shopify://shop_images/Fellow_Spring_20221122.jpg",
+        "background_image_focal_point": "image_presentation",
+        "image_overlay_tint_opacity": 80,
+        "image_overlay_tint_style": "gradient_down",
+        "image_overlay_override_with_custom_colors": false,
+        "image_overlay_override_color_text": "#ffffff",
+        "image_overlay_override_color_tint": "#000000",
+        "section_style_spacing_top": 28,
+        "section_style_spacing_bottom": 28,
+        "section_style_enable_animation": true
+      }
+    }
+  },
+  "order": ["main", "b5845d98-3a17-46b6-90ff-f79251658492"]
+}

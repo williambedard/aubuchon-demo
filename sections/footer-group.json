@@ -1,0 +1,188 @@
+{
+  "type": "footer",
+  "name": "t:groups.footer_group.name",
+  "sections": {
+    "0e02acc1-543f-435e-b58a-8e59e6c5e6e0": {
+      "type": "icon-with-text-columns",
+      "blocks": {
+        "column_zzPtFm": {
+          "type": "column",
+          "settings": {
+            "icon": "package",
+            "link": "",
+            "accent": "",
+            "heading": "Heading",
+            "text": "<p>Pair text with an icon or image</p>"
+          }
+        },
+        "column_yghQwD": {
+          "type": "column",
+          "settings": {
+            "icon": "package",
+            "link": "",
+            "accent": "",
+            "heading": "Heading",
+            "text": "<p>Pair text with an icon or image</p>"
+          }
+        },
+        "column_ey3RLD": {
+          "type": "column",
+          "settings": {
+            "icon": "package",
+            "link": "",
+            "accent": "",
+            "heading": "Heading",
+            "text": "<p>Pair text with an icon or image</p>"
+          }
+        }
+      },
+      "block_order": ["column_zzPtFm", "column_yghQwD", "column_ey3RLD"],
+      "settings": {
+        "icon_border": "none",
+        "icon_border_style": "outlined",
+        "icon_border_color": "accent",
+        "icon_size": 24,
+        "icon_size_mobile": 24,
+        "accent_font_size": 3,
+        "heading_font_size": 1,
+        "text_font_size": 2,
+        "desktop_alignment": "above_center",
+        "columns_per_row": 3,
+        "content_width": "full",
+        "custom_width": 600,
+        "color_scheme": "accent",
+        "override_with_custom_colors": true,
+        "override_color_text": "#161a15",
+        "override_color_background": "#ffffff",
+        "section_style_spacing_top": 60,
+        "section_style_spacing_bottom": 60,
+        "section_style_enable_animation": true
+      }
+    },
+    "75a630c6-25bd-4edb-83bc-d73c5312fe0e": {
+      "type": "newsletter-compact",
+      "blocks": {
+        "sections--21033935110454__75a630c6-25bd-4edb-83bc-d73c5312fe0e-text_content-1": {
+          "type": "text_content",
+          "settings": {
+            "width": "500",
+            "text_alignment": "left",
+            "accent": "",
+            "accent_divider_enable": true,
+            "accent_divider_color": "accent",
+            "title": "Sign up for our Newsletter",
+            "heading_font_size": 3,
+            "text": "<p>Include a short sentence describing what someone can expect from your newsletter.</p>",
+            "text_font_size": 3
+          }
+        },
+        "sections--21033935110454__75a630c6-25bd-4edb-83bc-d73c5312fe0e-newsletter_signup-1": {
+          "type": "newsletter_signup",
+          "settings": {
+            "signup_link_text": "Sign up",
+            "button_style": "primary",
+            "footer_text": "<p>By completing this form, you are signing up to receive our emails and can unsubscribe at any time.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "sections--21033935110454__75a630c6-25bd-4edb-83bc-d73c5312fe0e-text_content-1",
+        "sections--21033935110454__75a630c6-25bd-4edb-83bc-d73c5312fe0e-newsletter_signup-1"
+      ],
+      "settings": {
+        "spacing_mode": "between",
+        "color_forms": "transparent",
+        "color_scheme": "inverse",
+        "override_with_custom_colors": true,
+        "override_color_text": "#ffffff",
+        "override_color_background": "#272727",
+        "background_image_focal_point": "image_presentation",
+        "background_image_mobile_focal_point": "image_presentation",
+        "image_overlay_tint_opacity": 50,
+        "image_overlay_tint_style": "solid",
+        "image_overlay_override_with_custom_colors": false,
+        "image_overlay_override_color_text": "#ffffff",
+        "image_overlay_override_color_tint": "#000000",
+        "section_style_spacing_top": 20,
+        "section_style_spacing_bottom": 64,
+        "section_style_enable_animation": true
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "text_bdjF6y": {
+          "type": "text",
+          "settings": {
+            "collapse_on_mobile": true,
+            "title": "About us",
+            "show_title_on_desktop": true,
+            "text": "<p>Use this text area to tell your customers about your brand and vision. You can change it in the theme settings.</p>",
+            "image_max_width": 200,
+            "image_placement": "below_text",
+            "show_social_icons": true,
+            "social_icons_header": "",
+            "enable_follow_on_shop": true
+          }
+        },
+        "contact_3rVqtA": {
+          "type": "contact",
+          "settings": {
+            "title": "Contact",
+            "show_title_on_desktop": true,
+            "text": "<p>Questions? We're here for you Monday - Friday 10am-6pm ET.</p>",
+            "contact_icon_1": "phone",
+            "contact_text_1": "+1 (416) 555-5555",
+            "contact_link_1": "",
+            "contact_icon_2": "envelope",
+            "contact_text_2": "Email us",
+            "contact_link_2": "",
+            "contact_icon_3": "pin-location",
+            "contact_text_3": "123 Queen Street",
+            "contact_link_3": "",
+            "show_social_icons": false,
+            "social_icons_header": "Follow us",
+            "enable_follow_on_shop": false
+          }
+        },
+        "6ad30bb5-001c-44fe-8e36-2d1e02cbe275": {
+          "type": "links",
+          "settings": {
+            "collapse_on_mobile": true,
+            "title": "Links",
+            "show_title_on_desktop": true,
+            "link_list": "main-menu"
+          }
+        },
+        "links_ttnjJg": {
+          "type": "links",
+          "settings": {
+            "collapse_on_mobile": true,
+            "title": "Links",
+            "show_title_on_desktop": true,
+            "link_list": "main-menu"
+          }
+        }
+      },
+      "block_order": [
+        "text_bdjF6y",
+        "contact_3rVqtA",
+        "6ad30bb5-001c-44fe-8e36-2d1e02cbe275",
+        "links_ttnjJg"
+      ],
+      "settings": {
+        "desktop_column_gap": 100,
+        "enable_locale_selector": true,
+        "enable_country_selector": true,
+        "show_payment_icons": true,
+        "additional_copyright_text": "",
+        "subfooter_menu": ""
+      }
+    }
+  },
+  "order": [
+    "0e02acc1-543f-435e-b58a-8e59e6c5e6e0",
+    "75a630c6-25bd-4edb-83bc-d73c5312fe0e",
+    "footer"
+  ]
+}

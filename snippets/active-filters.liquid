@@ -1,0 +1,154 @@
+{%- liquid
+  comment
+    Renders the active filters display.
+
+    Required parameters:
+      - resource: { Object } The resource being filtered (ie. collection or search).
+      - show_swatch_filters: { Boolean } Whether to show swatch filters.
+      - active_filter_count: { Number } The number of active filters.
+
+    Optional parameters:
+      - wrapper_class: { String } A custom class to apply to the wrapper element.
+  endcomment
+
+  assign file_extension = 'png'
+  assign swatch_options = settings.swatch_options | downcase | split: ', '
+  assign sort_by = resource.sort_by | default: resource.default_sort_by
+
+  if resource.url
+    assign results_url = resource.url
+  else
+    assign terms = resource.terms | escape
+    assign results_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
+  endif
+
+  # custom swatch colors
+  assign custom_colors = settings.custom_swatch_colors | newline_to_br | split: '<br />'
+  assign custom_color_key_map = ''
+  assign custom_color_value_map = ''
+
+  for color_value in custom_colors
+    assign custom_color_key = color_value | split: ':' | first | strip | downcase
+    assign custom_color_value = color_value | split: ':' | last | strip
+
+    assign custom_color_key_map = custom_color_key_map | append: ',' | append: custom_color_key
+    assign custom_color_value_map = custom_color_value_map | append: ',' | append: custom_color_value
+  endfor
+
+  assign custom_color_key_map = custom_color_key_map | remove_first: ',' | split: ','
+  assign custom_color_value_map = custom_color_value_map | remove_first: ',' | split: ','
+
+  assign container_class = 'active-filters'
+
+  if wrapper_class != blank
+    assign container_class = container_class | append: ' ' | append: wrapper_class
+  endif
+-%}
+
+<div
+  class="{{ container_class }}"
+  data-active-filters
+>
+  <div
+    class="active-filters-inner"
+    data-has-active-filters="{% if active_filter_count > 0 %}true{% else %}false{% endif %}"
+  >
+    {% for filter in resource.filters -%}
+      {%- assign group_name = filter.label | handleize -%}
+
+      {% for value in filter.active_values -%}
+        <div class="active-filters__active-filter-wrapper">
+          <a
+            href="{{ value.url_to_remove }}"
+            class="active-filters__active-filter fs-body-100 no-transition"
+            data-remove-filter
+            data-filter="filter-{{ value.label | handleize | escape }}"
+            data-name="{{ value.param_name }}"
+            data-value="{{ value.value }}"
+            data-value-escaped="{{ value.value | url_escape }}"
+          >
+            {% if swatch_options contains group_name and show_swatch_filters == true -%}
+              {% liquid
+                assign custom_swatch_image = value.value | handle | append: '.' | append: file_extension
+                assign downcased_value = value.value | downcase
+
+                if custom_color_key_map contains downcased_value
+                  for color_name in custom_color_key_map
+                    if color_name == downcased_value
+                      assign filter_swatch_style = 'background-color: [[bc]];' | replace: '[[bc]]', custom_color_value_map[forloop.index0]
+                    endif
+                  endfor
+                else
+                  assign color_value = value.value | downcase | replace: ' ', ''
+                  assign filter_swatch_style = 'background-color: [[bc]];' | replace: '[[bc]]', color_value
+                endif
+
+                if images[custom_swatch_image] != blank
+                  assign image_url = custom_swatch_image | file_url
+                  assign filter_swatch_style = filter_swatch_style | append: ' background-image: url([[csi]]);' | replace: '[[csi]]', image_url
+                endif
+              -%}
+
+              <span
+                class="active-filters__swatch"
+                style="{{ filter_swatch_style }}"
+              ></span>
+            {%- endif %}
+
+            {% liquid
+              if filter.type == 'boolean'
+                echo filter.label | escape
+              else
+                echo value.label | escape
+              endif
+
+              render 'icon', icon: 'close-small'
+            -%}
+          </a>
+        </div>
+      {%- endfor %}
+
+      {% if filter.type == 'price_range' -%}
+        {% if filter.min_value.value != null or filter.max_value.value != null -%}
+          <div class="active-filters__active-filter-wrapper">
+            <a
+              href="{{ value.url_to_remove }}"
+              class="active-filters__active-filter fs-body-100 no-transition"
+              data-remove-range
+            >
+              {% liquid
+                capture min_value
+                  if filter.min_value.value
+                    echo filter.min_value.value | money
+                  else
+                    echo filter.range_min | money
+                  endif
+                endcapture
+
+                capture max_value
+                  if filter.max_value.value
+                    echo filter.max_value.value | money
+                  else
+                    echo filter.range_max | money
+                  endif
+                endcapture
+
+                echo '[[min]] - [[max]]' | replace: '[[min]]', min_value | replace: '[[max]]', max_value
+
+                render 'icon', icon: 'close-small'
+              -%}
+            </a>
+          </div>
+        {%- endif -%}
+      {% endif %}
+    {%- endfor -%}
+
+    <a
+      href="{{ results_url }}"
+      class="active-filters__active-filter active-filters__clear no-transition btn btn--text-link fs-body-100"
+      data-clear-all-filters
+    >
+      <span>{{ 'filters.clear_all' | t }}</span>
+    </a>
+  </div>
+</div>
