@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "account": {
     "add_address": "Add Address",
@@ -655,7 +664,9 @@
       "pick_up_available_time": "In stock, {{ pickup_time }}",
       "pick_up_currently_unavailable": "Pickup currently unavailable",
       "pick_up_unavailable_at": "Pickup unavailable at {{ location_name }}",
-      "view_store_info": "View store information"
+      "view_store_info": "View store information",
+      "select_store": "Select store location",
+      "preferred_store": "Preferred store"
     }
   }
 }

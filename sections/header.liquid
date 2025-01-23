@@ -250,16 +250,16 @@
 {%- endcapture -%}
 
 {%- capture nav -%}
-    <nav class="header__links" data-navigation>
-      {% if menu != blank -%}
-        {% render 'navigation',
-          menu: links,
-          interaction_type: section.settings.menu_interaction,
-          blocks: section.blocks,
-          featured_link_label: section.settings.featured_link_label
-        -%}
-      {%- endif %}
-    </nav>
+  <nav class="header__links" data-navigation>
+    {% if menu != blank -%}
+      {% render 'navigation',
+        menu: links,
+        interaction_type: section.settings.menu_interaction,
+        blocks: section.blocks,
+        featured_link_label: section.settings.featured_link_label
+      -%}
+    {%- endif %}
+  </nav>
 {%- endcapture -%}
 
 {%- capture menu_icon -%}

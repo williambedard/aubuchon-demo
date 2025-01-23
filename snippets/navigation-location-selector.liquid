@@ -1,0 +1,127 @@
+<li data-submenu-parent class="navigation__location-item">
+  <a 
+    href="#"
+    class="navigation__submenu-trigger fs-navigation-base"
+    data-link
+    data-parent
+    data-dropdown-trigger
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
+    <span class="link-hover" data-selected-location><strong>
+      {% for location in metaobjects.store_location.values -%}
+        {% if forloop.first %}
+          <span class="store-status">
+            <span class="store-status__indicator">Open</span>
+          </span>
+          {{ location.address.value }}
+        {% endif %}
+      {%- endfor %}
+    </strong></span>
+    <span class="navigation__links-icon">
+      <span class="icon icon-chevron-small">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.875 7.438 12 17.563 22.125 7.438" stroke="currentColor" stroke-width="2.75"></path></svg>
+      </span>
+    </span>
+  </a>
+  
+  <div class="navigation__submenu ff-body fs-body-100 animation animation--dropdown" data-submenu data-depth="1" aria-hidden="true">
+    <ul class="navigation__submenu-list ff-body">
+      {% for location in metaobjects.store_location.values -%}
+        <li class="navigation__submenu-item animation--dropdown-item">
+          <a href="#" class="navigation__submenu-link" data-link data-location-id="{{ location.id }}">
+            <div class="store-details">
+              <h4 class="store-name">{{ location.name.value }}</h4>
+              <p class="store-address">{{ location.address.value }}</p>
+              <p class="store-phone">{{ location.phone.value }}</p>
+              <p class="store-hours">{{ location.open_hours.value }}</p>
+            </div>
+          </a>
+        </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</li>
+
+<style>
+  .navigation__location-item {
+    margin-left: auto !important;
+  }
+  
+  .header__nav-bar--align-left .header__links .navigation__links-list {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  /* Store details styling */
+  .store-details {
+    padding: 10px;
+  }
+
+  .store-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .store-address,
+  .store-phone,
+  .store-hours {
+    margin: 3px 0;
+    font-size: 0.9em;
+    color: var(--color-text-subdued, #666);
+  }
+
+  .store-description {
+    margin-top: 8px;
+    font-size: 0.9em;
+    color: var(--color-text-subdued, #666);
+  }
+
+  /* Hover functionality */
+  .navigation__location-item:hover .navigation__submenu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .navigation__submenu {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .store-status {
+    position: relative;
+    padding-left: 1rem;
+    display: inline-grid;
+    grid-auto-flow: column;
+    gap: 0.25rem;
+    font-size: 0.875rem;
+    margin-left: 0.5rem;
+  }
+
+  .store-status__indicator {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--color-success, #28a745);
+  }
+
+  .store-status__indicator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 0.375rem;
+    height: 0.375rem;
+    border-radius: 50%;
+    background-color: var(--color-success, #28a745);
+  }
+
+  .store-status__hours {
+    font-weight: 600;
+    color: var(--color-text, #000);
+  }
+</style>
