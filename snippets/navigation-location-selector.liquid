@@ -1,3 +1,5 @@
+{{ 'location-switcher.js' | asset_url | script_tag }}
+
 <li data-submenu-parent class="navigation__location-item">
   <a 
     href="#"
@@ -29,12 +31,20 @@
     <ul class="navigation__submenu-list ff-body">
       {% for location in metaobjects.store_location.values -%}
         <li class="navigation__submenu-item animation--dropdown-item">
-          <a href="#" class="navigation__submenu-link" data-link data-location-id="{{ location.id }}">
+          <a 
+            href="#" 
+            class="navigation__submenu-link" 
+            data-link 
+            data-location-id="{{ location.id }}"
+            data-location-address="{{ location.address.value }}"
+            data-primary-color="{{ location.primary_color.value }}"
+            data-secondary-color="{{ location.secondary_color.value }}"
+            data-store-logo="{{ location.store_logo.value }}"
+            onclick="window.locationSwitcher.selectLocation(event, this)"
+          >
             <div class="store-details">
               <h4 class="store-name">{{ location.name.value }}</h4>
               <p class="store-address">{{ location.address.value }}</p>
-              <p class="store-phone">{{ location.phone.value }}</p>
-              <p class="store-hours">{{ location.open_hours.value }}</p>
             </div>
           </a>
         </li>
